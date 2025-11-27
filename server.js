@@ -19,6 +19,9 @@ app.use(errorHandler);
 app.use("/api/items", itemRoutes);
 app.use("/api/logs", logRoutes);
 app.use("/api/users", authRoutes);
+app.get("/", (req, res) => {
+  res.send("Backend is running");
+});
 
 const startServer = async () => {
   await connectDB();
